@@ -38,3 +38,9 @@ inc/
 /.pixi/
 .pixi
 .pixi/
+pixi.lock
+
+calls.tsv
+grapetree.dnd
+grapetree.bs.dnd
+bsProfiles
