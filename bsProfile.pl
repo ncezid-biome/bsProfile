@@ -4,8 +4,8 @@ use warnings;
 use Data::Dumper;
 
 my $header=<>; 
-chomp $header; 
-my @header=split(/,/, $header);
+$header =~ s/^\s+|\s+$//g; # get rid of any leading or trailing whitespace
+my @header=split(/\t/, $header);
 my $sampleHeader = shift(@header); 
 my $numCols=@header; 
 my $sampleSize=int($numCols/2);
@@ -24,15 +24,16 @@ for(1..$sampleSize){
 @randomSample = sort {$a <=> $b} @randomSample;
 
 # print the header for the random columns
-print join(",", $sampleHeader, @header[@randomSample]), "\n";
+# print join("\t", $sampleHeader, @header[@randomSample]), "\n";
+print join("\t", $sampleHeader, (1..$sampleSize)), "\n";
 
 while(<>){
-    chomp;
-    my @allAlleles = split(/,/);
+    s/^\s+|\s+$//g; # get rid of any leading or trailing whitespace
+    my @allAlleles = split(/\t/);
     my $sampleID = shift(@allAlleles);
     my @randomAlleles = ();
     foreach my $i (@randomSample){
         push @randomAlleles, $allAlleles[$i];
     }
-    print join(",", $sampleID, @randomAlleles), "\n";
+    print join("\t", $sampleID, @randomAlleles), "\n";
 }

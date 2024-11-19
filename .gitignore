@@ -33,3 +33,8 @@ inc/
 /MANIFEST.bak
 /pm_to_blib
 /*.zip
+
+# ignore root folder .pixi
+/.pixi/
+.pixi
+.pixi/
