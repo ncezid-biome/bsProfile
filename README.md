@@ -53,8 +53,6 @@ zcat calls_core_standard.tsv.gz > calls.tsv
 grapetree --profile calls.tsv -n 1 > grapetree.dnd
 ```
 
-- or -
-
 Add bootstraps to the tree using `gotree`.
 
 ```bash
