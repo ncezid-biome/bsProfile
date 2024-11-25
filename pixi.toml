@@ -11,6 +11,4 @@ version = "0.1.0"
 [dependencies]
 grapetree = ">=2.1,<3"
 gotree = ">=0.4.5,<0.5"
-nextflow = ">=23,<23.10"
-singularity = "<=3.7"
 perl = ">=5.32.1,<6"
